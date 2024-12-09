@@ -1,6 +1,6 @@
 Flask==2.2.3
 requests==2.31.0
-2captcha
+2Captcha
 pandas
 Werkzeug==2.2.3
 beautifulsoup4
