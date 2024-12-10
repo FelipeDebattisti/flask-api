@@ -85,7 +85,22 @@ def infos():
         }), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
+        
+@app.route('/test-2captcha', methods=['GET'])
+def test_2captcha():
+    try:
+        # Testa a conectividade e obtém o saldo disponível
+        balance = solver.balance()
+        return jsonify({
+            "status": "success",
+            "balance": balance,
+            "message": "Conexão com o serviço 2Captcha bem-sucedida!"
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": f"Erro ao conectar com o serviço 2Captcha: {str(e)}"
+        }), 500
 
 # Executar a aplicação
 if __name__ == '__main__':
