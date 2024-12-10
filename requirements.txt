@@ -3,5 +3,4 @@ requests==2.31.0
 pandas
 Werkzeug==2.2.3
 beautifulsoup4
-BeautifulSoup
 Thread
