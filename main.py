@@ -10,7 +10,7 @@ API_KEY = "2f2625bb05b0cef3b93209071505d6a9"
 solver = TwoCaptcha(API_KEY)
 
 # Ajustar tempo limite e intervalo de polling
-solver.default_timeout = 300  # 5 minutos de timeout
+solver.default_timeout = 600 
 solver.polling_interval = 10  # Intervalo de 10 segundos entre verificações
 
 # Aplicação principal
