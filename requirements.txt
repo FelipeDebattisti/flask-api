@@ -4,3 +4,4 @@ pandas
 Werkzeug==2.2.3
 beautifulsoup4
 Thread
+gunicorn
