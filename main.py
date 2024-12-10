@@ -86,19 +86,6 @@ def infos():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# Servidor de Keep-Alive
-keep_alive_app = Flask('keep_alive')
-
-@keep_alive_app.route('/')
-def home():
-    return "Estou vivo!"
-
-def run_keep_alive():
-    keep_alive_app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run_keep_alive)
-    t.start()
 
 # Executar a aplicação
 if __name__ == '__main__':
