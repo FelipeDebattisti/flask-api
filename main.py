@@ -31,6 +31,7 @@ def infos():
 
         # Resolver o reCAPTCHA
         print("Resolvendo reCAPTCHA...")
+        solver = TwoCaptcha(API_KEY, default_timeout=120, polling_interval=10)
         result = solver.recaptcha(sitekey=site_key, url=page_url)
         token = result["code"]  # Captura o token do reCAPTCHA
         print("Token do reCAPTCHA obtido:", token)
