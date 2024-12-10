@@ -6,3 +6,4 @@ beautifulsoup4
 Thread
 gunicorn
 git+https://github.com/2captcha/2captcha-python.git
+openpyxl
