@@ -5,4 +5,4 @@ Werkzeug==2.2.3
 beautifulsoup4
 Thread
 gunicorn
-twocaptcha
+git+https://github.com/2captcha/2captcha-python.git
