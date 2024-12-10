@@ -9,6 +9,10 @@ from threading import Thread
 API_KEY = "2f2625bb05b0cef3b93209071505d6a9"
 solver = TwoCaptcha(API_KEY)
 
+# Ajustar tempo limite e intervalo de polling
+solver.default_timeout = 300  # 5 minutos de timeout
+solver.polling_interval = 10  # Intervalo de 10 segundos entre verificações
+
 # Aplicação principal
 app = Flask(__name__)
 
@@ -31,7 +35,6 @@ def infos():
 
         # Resolver o reCAPTCHA
         print("Resolvendo reCAPTCHA...")
-        solver = TwoCaptcha(API_KEY, default_timeout=300, polling_interval=10)
         result = solver.recaptcha(sitekey=site_key, url=page_url)
         token = result["code"]  # Captura o token do reCAPTCHA
         print("Token do reCAPTCHA obtido:", token)
