@@ -16,6 +16,14 @@ solver.polling_interval = 10  # Intervalo de 10 segundos entre verificações
 # Aplicação principal
 app = Flask(__name__)
 
+# Verificação inicial do 2Captcha
+@app.before_first_request
+def validate_2captcha():
+    try:
+        balance = solver.balance()
+        print(f"Conexão inicial com 2Captcha bem-sucedida. Saldo: {balance}")
+    except Exception as e:
+        print(f"Erro ao conectar com o 2Captcha na inicialização: {e}")
 @app.route('/infos', methods=['POST'])
 def infos():
     try:
